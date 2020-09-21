@@ -1,0 +1,15 @@
+<div fxLayout="row">
+  <div fxLayoutAlign="start center">
+    LAST SELECTED : 
+  </div>
+  <div fxFlex fxLayoutAlign="end end" style="margin-right: 10px; margin-top: 10px;">
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" (click)="openDialog()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>
+<mat-nav-list>
+  <mat-list-item *ngFor="let user of list" (click)="select(user)">
+    {{user.name}}
+  </mat-list-item>
+</mat-nav-list>

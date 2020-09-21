@@ -1,0 +1,43 @@
+<div fxLayout="column" fxFill style="padding: 10px;">
+  <div *ngIf="userDetail" fxLayout="row" class="user-main-container">
+    <div fxLayout = "column" fxFlex>
+      <h3>
+        User Detail
+      </h3>
+      {{userDetail.name}}<br>
+      {{userDetail.username}}<br>
+      {{userDetail.email}}<br>
+      {{userDetail.phone}}<br>
+      {{userDetail.website}}<br>
+    </div>
+    <div fxLayout = "column" fxFlex>
+      <h3>
+        Address
+      </h3>
+      <div>
+        {{userDetail.address.street}}<br>
+        {{userDetail.address.suite}}<br>
+        {{userDetail.address.city}}<br>
+      </div>
+    </div>
+    <div fxLayout = "column" fxFlex>
+      <h3>
+        Company
+      </h3>
+      {{userDetail.company.name}}<br>
+      {{userDetail.company.catchPhrase}}<br>
+      {{userDetail.company.bs}}<br>
+    </div>
+  </div>
+  <div *ngIf="posts" style="margin-top: 30px;">
+    <h2>Recent Posts</h2>
+    <div *ngFor="let post of posts; let even = even; let odd = odd;" 
+      fxLayout="column" class="post-detail-container"
+      [style.background] = "even ? '#f5f5f5' : 'white'">
+      <h3>
+        {{post.title}}
+      </h3>
+      {{post.body}}
+    </div>
+  </div>
+</div>

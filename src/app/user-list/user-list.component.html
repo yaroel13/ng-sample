@@ -1,0 +1,35 @@
+<div fxLayout="row" fxFill>
+  <div fxFlex fxFlex="30">
+    <app-user-selection [list]="dataList" (newItemEvent)="addNewItem($event)" (selectItemEvent)="select($event)"></app-user-selection>
+  </div>
+  <div fxFlex="70" style="border-left: 5px; border-left-color: #f5f5f5; border-left-style: solid;">
+    <div *ngIf="selectedUser" fxFlexLayout="column" fxFill>
+      <div>
+        <h3>User Details</h3>
+        {{selectedUser.name}}<br>
+        {{selectedUser.username}}<br>
+        {{selectedUser.email}}<br>
+      </div>
+      <div>
+        <h3>Address</h3>
+        {{selectedUser.address.street}}<br>
+        {{selectedUser.address.suite}}<br>
+        {{selectedUser.address.city}}<br>
+      </div>
+      <div>
+        <h3>Company</h3>
+        {{selectedUser.company.name}}<br>
+        {{selectedUser.company.catchPhrase}}<br>
+        {{selectedUser.company.bs}}<br>
+      </div>
+
+      <button mat-button [routerLink]="['/user-details', selectedUser.id]" *ngIf="selectedUser.id">
+        Click for more details
+      </button>
+
+    </div>
+    <div fxFlexLayout="column" fxFill fxLayoutAlign="center center">
+      No Selected User
+    </div>
+  </div>
+</div>

@@ -9,7 +9,13 @@ import { HomeComponent } from './home/home.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MatButton, MatButtonModule } from '@angular/material';
+import { MatButton, MatButtonModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule, MatSelectModule } from '@angular/material';
+import { UserListComponent } from './user-list/user-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserSelectionComponent } from './user-list/user-selection/user-selection.component';
+import { AddUserComponent } from './dialog/add-user/add-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +23,11 @@ import { MatButton, MatButtonModule } from '@angular/material';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    UserListComponent,
+    UserDetailComponent,
+    UserSelectionComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
@@ -25,9 +35,17 @@ import { MatButton, MatButtonModule } from '@angular/material';
     FlexLayoutModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    HttpClientModule,
+    MatIconModule,
+    MatDialogModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AddUserComponent]
 })
 export class AppModule { }
